@@ -21,7 +21,6 @@ void setup() {
    pinMode(COLOR_SWITCH, INPUT_PULLUP);
    pinMode(BRIGHTNESS_POT, INPUT);
    pinMode(BRIGHTNESS_SWITCH, INPUT_PULLUP);
-   Serial.begin(9600);
    strip.begin();
    strip.show();    
 }
@@ -30,22 +29,17 @@ void loop() {
   if (digitalRead(BRIGHTNESS_SWITCH) == HIGH) {
       // Get the percentage of the full brightness.
       brightness = 1.0 - (analogRead(BRIGHTNESS_POT) / 1023.0);
-      Serial.print("Brightness: ");
       Serial.println(brightness);
      if (digitalRead(COLOR_SWITCH) == HIGH) {
         // Scale down the color range.
         int color = (analogRead(COLOR_POT) / 1023.0)  *  245. .0;
-        Serial.print("Color: ");
-       Serial.println(color);
         calculateAndChangeColor(color);
       } else {
           // Color is disabled. Change strip to white.
           changeColor(255, 255, 255);
-          Serial.println("Color disabled");
       }  
   } else {
       changeColor(0,0,0); 
-      Serial.println("Strip is off");
   }  
 
   delay(50);
