@@ -1,7 +1,7 @@
 LEDStripController
 ==================
 
-This is the code for a simple LED strip controller. It uses an Arduino-based microcontroller that can change both the brightness and color of LED strips.
+This is the code for a simple LED strip controller. It uses an Arduino-based microcontroller that can change both the brightness and color of LED strips. The build instructions are here: http://blog.grunick.com/diy-led-strip-controller/
 
 Parts list:
 
