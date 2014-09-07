@@ -32,7 +32,7 @@ void loop() {
       Serial.println(brightness);
      if (digitalRead(COLOR_SWITCH) == HIGH) {
         // Scale down the color range.
-        int color = (analogRead(COLOR_POT) / 1023.0)  *  245. .0;
+        int color = (analogRead(COLOR_POT) / 1023.0)  *  245.0;
         calculateAndChangeColor(color);
       } else {
           // Color is disabled. Change strip to white.
